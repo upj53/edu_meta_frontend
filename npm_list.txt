@@ -1,0 +1,9 @@
+test-svelte-frontend@0.0.0 /mnt/d/__git__/goorm_frontend_svelte
+├── @sveltejs/vite-plugin-svelte@3.0.2
+├── bootstrap@5.3.2
+├── marked@12.0.0
+├── qs@6.11.2
+├── svelte-spa-router@4.0.1
+├── svelte@4.2.9
+└── vite@5.0.12
+

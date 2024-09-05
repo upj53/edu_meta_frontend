@@ -1,0 +1,86 @@
+1단계 문제: 46,47,48,49 / 배점: 10,10,10,10(점)
+2단계 문제: 51,52,53,54 / 배점: 10,10,10,10(점)
+3단계 문제: 56,57 / 배점: 10,10(점)
+
+46.다음은 파이썬의 반복 제어문을 나타낸 코드이다. 잘못 사용한 것을 고르시오.
+객관식 문항 정보
+for i in range(1 < 10): (정답)
+
+47.다음은 파이썬의 반복 제어문을 나타낸 코드이다. 잘못 사용한 것을 고르시오.
+객관식 문항 정보
+while -1: (정답)
+
+48.다음은 파이썬의 반복 제어문을 나타낸 코드이다. 예상되는 실행 결과를 고르시오.
+for a in range(1, 10, 2):
+    print(a, end=',')
+객관식 문항 정보
+1,3,5,7,9, (정답)
+
+다음 파이썬 코드의 예상되는 실행결과를 고르시오.
+for n in range(10):
+  if n%2 == 0:
+    continue
+  print(n, end=' ')
+객관식 문항 정보
+1 3 5 7 9 (정답)
+
+
+51.주관식 문항 답안 예시
+문제 1
+i in range(1, 101):
+i in range(101):
+문제 2
+total = total + i
+total += i
+
+52.주관식 문항 답안 예시
+문제 1
+i <= 100
+문제 2
+total = total + i
+total += i
+
+53.주관식 문항 답안 예시
+문제 1
+n == '종료'
+n == "종료"
+문제 2
+break
+
+54.주관식 문항 답안 예시
+문제 1
+num == 5
+문제 2
+continue
+
+56.정답 코드
+point = 0
+total = 0
+for i in range(1, 21, 1):
+    text = str(i) + '회 다트 점수를 입력하세요: '
+    point = input(text)
+    point = int(point)
+    print(i, '회 점수는', point)
+    total = total + point
+print('최종 점수는', total)
+
+57.정답 코드
+kind = ''
+basketball = 0
+football = 0
+baseball = 0
+while kind != '종료':
+    kind = input('입력하세요 [농구공, 축구공, 야구공, 종료]:')
+    if kind == '농구공':
+        basketball += 1
+    elif kind == '축구공':
+        football += 1
+    elif kind == '야구공':
+        baseball += 1
+    elif kind == '종료':
+        break
+    else:
+        print('잘못된 입력입니다.')
+print('농구공의 개수:', basketball)
+print('축구공의 개수:', football)
+print('야구공의 개수:', baseball)
