@@ -18,7 +18,7 @@
     style="z-index:10000"
 >
     <div class="container-fluid">
-        <a class="navbar-brand" use:link href="/">HOME</a>
+        <a class="navbar-brand" use:link href="/">MC-Learn</a>
         <button
             class="navbar-toggler"
             type="button"
