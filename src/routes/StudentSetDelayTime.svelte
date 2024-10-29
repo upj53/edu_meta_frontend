@@ -1,8 +1,8 @@
 <script>
     import { link, push } from "svelte-spa-router";
     import fastapi from "../lib/api";
-    import Error from "../components/Error.svelte";
     import { userid } from "../lib/store";
+    import Error from "../components/Error.svelte";
     import moment from "moment/min/moment-with-locales";
     moment.locale("ko");
 

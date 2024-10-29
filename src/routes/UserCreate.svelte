@@ -1,33 +1,38 @@
 <script>
     import { querystring, link, push } from "svelte-spa-router";
     import fastapi from "../lib/api";
+    import { userid } from "../lib/store";
     import Error from "../components/Error.svelte";
 
     let error = { detail: [] };
 
     let params = new URLSearchParams($querystring);
     let user_type = "student";
+    let teacherid = "";
     if (params.has("teacher")) {
         user_type = "teacher";
+    } else {
+        teacherid = `${$userid}`;
     }
 
-    let userid = "";
-    let password1 = "";
-    let password2 = "";
-    let username = "";
-    let email = "";
+    let create_userid = "";
+    let create_password1 = "";
+    let create_password2 = "";
+    let create_username = "";
+    let create_email = "";
 
     function create_user(event) {
         event.preventDefault();
         let url = "/edu/user/create";
         let params = {
-            userid: userid,
+            userid: create_userid,
             usertype: user_type,
-            password1: password1,
-            password2: password2,
-            username: username,
-            email: email,
+            password1: create_password1,
+            password2: create_password2,
+            username: create_username,
+            email: create_email,
             current_classroom: 0,
+            teacherid: teacherid,
         };
         fastapi(
             "post",
@@ -57,7 +62,7 @@
                 type="text"
                 class="form-control"
                 id="userid"
-                bind:value={userid}
+                bind:value={create_userid}
                 placeholder="사용할 아이디를 영문 또는 영문과 숫자의 조합으로 입력해주세요."
             />
         </div>
@@ -67,7 +72,7 @@
                 type="password"
                 class="form-control"
                 id="password1"
-                bind:value={password1}
+                bind:value={create_password1}
                 placeholder="비밀번호를 입력해주세요."
             />
         </div>
@@ -77,7 +82,7 @@
                 type="password"
                 class="form-control"
                 id="password2"
-                bind:value={password2}
+                bind:value={create_password2}
                 placeholder="비밀번호를 다시 입력해주세요."
             />
         </div>
@@ -87,7 +92,7 @@
                 type="text"
                 class="form-control"
                 id="username"
-                bind:value={username}
+                bind:value={create_username}
                 placeholder="이름을 입력해주세요."
             />
         </div>
@@ -97,7 +102,7 @@
                 type="email"
                 class="form-control"
                 id="email"
-                bind:value={email}
+                bind:value={create_email}
                 placeholder="이메일을 입력해주세요."
             />
         </div>
