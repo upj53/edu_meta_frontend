@@ -26,7 +26,7 @@ const fastapi = async function (operation, url, params, success_callback, failur
     else if (server_status == 'goorm') {
         _url = import.meta.env.VITE_SERVER_URL_GOORM_VALUE + url;
     }
-    else if (server_status == 'homeserver') {
+    else if (server_status == 'myserver') {
         _url = import.meta.env.VITE_SERVER_URL_HOMESERVER_VALUE + url;
     }
     if (method === 'get') {
